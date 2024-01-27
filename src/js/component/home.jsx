@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
-
 export function Home() {
 	const [selectedColor, setSelectedColor] = useState("yellow");
 	const [showPurple, setShowPurple] = useState(false);
@@ -12,7 +7,6 @@ export function Home() {
 
 	useEffect(() => {
         let intervalId;
-
         if (timerActive) {
             intervalId = setInterval(() => {
                 if (selectedColor === "red") {
@@ -34,8 +28,6 @@ export function Home() {
         setTimerActive(!timerActive);
     };
 
-
-
 	return (
 		<div>
 			<div className="traffic-light text-center">
@@ -46,7 +38,6 @@ export function Home() {
 					}}
 					className={"light red" + (selectedColor === "red" ? " glow1" : "")}
 				></div>
-
 				<div
 					onClick={() => {
 						setSelectedColor("yellow");
@@ -54,7 +45,6 @@ export function Home() {
 					}}
 					className={"light yellow" + (selectedColor === "yellow" ? " glow2" : "")}
 				></div>
-
 				<div
 					onClick={() => {
 						setSelectedColor("green");
@@ -62,10 +52,6 @@ export function Home() {
 					}}
 					className={"light green" + (selectedColor === "green" ? " glow3" : "")}
 				></div>
-
-
-
-
 				{showPurple && (
 					<div
 						onClick={() => {
@@ -75,7 +61,6 @@ export function Home() {
 						className={"light purple" + (selectedColor === "purple" ? " glow4" : "")}
 					></div>
 				)}
-
 			</div>
 			<button type="button" class="btn btn-secondary boton" onClick={() => setShowPurple(!showPurple)}>Uno más!</button>
 			<button type="button" className="btn btn-secondary boton2" onClick={toggleTimer}>
@@ -83,7 +68,6 @@ export function Home() {
             </button>
 		</div>
 	);
-
 }
 
 export default Home;
