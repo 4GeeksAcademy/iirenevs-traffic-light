@@ -20,8 +20,10 @@ export function Home() {
                 } else if (selectedColor === "yellow") {
                     setSelectedColor("green");
                 } else if (selectedColor === "green") {
-                    setSelectedColor("red");
-                }
+                    setSelectedColor("purple");
+                } else if (selectedColor === "purple") {
+					setSelectedColor("red");
+				}
             }, 600);
         }
 
